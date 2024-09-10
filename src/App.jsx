@@ -2,6 +2,9 @@ import './App.css'
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
+// contexts
+import { AuthProvider } from './context/AuthContext';
+
 // components
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -16,6 +19,7 @@ function App() {
 
   return (
     <div className='App'>
+      <AuthProvider>
       <BrowserRouter>
         <NavBar />
         <div className="container">
@@ -28,6 +32,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }
